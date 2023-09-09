@@ -2,29 +2,9 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class CustomDataFaker {
-
-  public static void main(String[] args) {
-
-    out.printf(
-         """
-              This is my %s %s
-              My fullName is: %s
-              I like the: %s movies and
-              I usually code in %s,
-              """.formatted(
-              DataFaker.getFirstName(),
-              DataFaker.getLastName(),
-              DataFaker.getFullName(),
-              DataFaker.getHollywoodActorActress(),
-              DataFaker.getProgrammingLanguage()
-         )
-    );
-  }
-
-
   private static class DataFaker {
 
     private static final Random random = new Random();
@@ -493,6 +473,76 @@ public class CustomDataFaker {
          "Architect"
     };
 
+    private static final String[] EN_ARTIST_NAMES = {
+         "Donatello",
+         "Botticelli",
+         "Michelangelo",
+         "Raphael",
+         "Titian",
+         "Durer",
+         "Caravaggio",
+         "Rubens",
+         "Bernini",
+         "Rembrandt",
+         "Pissarro",
+         "Manet",
+         "Degas",
+         "Cezanne"
+    };
+
+
+    private static final String[] ASIN_LIST = {
+         "B000BJ20TO",
+         "B000BJ0Z50",
+         "B000BUYO60",
+         "B000HGWGHW",
+         "B000II6WOW",
+         "B000AMNV8G",
+         "B000HDT0BU",
+         "B000HGNY7I",
+         "B000I6VQX6",
+         "B0002I6HKW",
+         "B00067POW6",
+         "B0000VFDCY",
+         "B0000W4I2O",
+         "B00026IESC",
+         "B000GWIHF2"
+    };
+
+
+    private static final String[] COLOR_NAME_LIST = {
+         "red",
+         "green",
+         "blue",
+         "yellow",
+         "purple",
+         "mint green",
+         "teal",
+         "white",
+         "black",
+         "orange",
+         "pink",
+         "grey",
+         "maroon",
+         "violet",
+         "turquoise"
+    };
+
+    public static String getColor() {
+
+      return getRandomOption(COLOR_NAME_LIST);
+    }
+
+    public static String getArtist() {
+
+      return getRandomOption(EN_ARTIST_NAMES);
+    }
+
+    public static String getSinId() {
+
+      return getRandomOption(ASIN_LIST);
+    }
+
     public static String generateStringFromRegex(String regex) {
 
       StringBuilder generatedString = new StringBuilder();
@@ -537,16 +587,6 @@ public class CustomDataFaker {
       Random random = new Random();
       return minValue + (long) (random.nextDouble() * (maxValue - minValue));
     }
-
-    public static void main(String[] args) {
-
-      long minValue = 100000L;
-      long maxValue = 999999L;
-
-      long randomValue = generateRandomLong(minValue, maxValue);
-      out.println("Random Long Value: " + randomValue);
-    }
-
 
     public static String getAddress() {
 
@@ -699,6 +739,7 @@ public class CustomDataFaker {
       return getRandomOption(POSTAL_CODE_OPTIONS);
     }
 
+
     public static String getJob() {
 
       return getRandomOption(JOB_OPTIONS);
@@ -709,5 +750,23 @@ public class CustomDataFaker {
       int index = random.nextInt(options.length);
       return options[index];
     }
+  }
+
+  public static void main(String[] args) {
+
+    out.printf(
+         """
+              This is my %s %s
+              My fullName is: %s
+              I like the: %s movies and
+              I usually code in %s,
+              """.formatted(
+              DataFaker.getFirstName(),
+              DataFaker.getLastName(),
+              DataFaker.getFullName(),
+              DataFaker.getHollywoodActorActress(),
+              DataFaker.getProgrammingLanguage()
+         )
+    );
   }
 }
