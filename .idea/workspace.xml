@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bd64fb4-3c67-48cf-b3cb-5f2ebe5cc24b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/CustomDataFaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CustomDataFaker.java" afterDir="false" />
-    </list>
+    <list default="true" id="2bd64fb4-3c67-48cf-b3cb-5f2ebe5cc24b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +53,7 @@
   <component name="RunManager">
     <configuration name="CustomDataFaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CustomDataFaker" />
-      <module name="CustomDataFaker" />
+      <module name="custom-data-faker" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

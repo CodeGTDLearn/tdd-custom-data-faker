@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import static java.lang.System.out;
 
 public class CustomDataFaker {
-  private static class DataFaker {
+  public static class Provides {
 
     private static final Random random = new Random();
 
@@ -528,22 +528,22 @@ public class CustomDataFaker {
          "turquoise"
     };
 
-    public static String getColor() {
+    public static String color() {
 
-      return getRandomOption(COLOR_NAME_LIST);
+      return RandomOption(COLOR_NAME_LIST);
     }
 
-    public static String getArtist() {
+    public static String artist() {
 
-      return getRandomOption(EN_ARTIST_NAMES);
+      return RandomOption(EN_ARTIST_NAMES);
     }
 
-    public static String getSinId() {
+    public static String SinId() {
 
-      return getRandomOption(ASIN_LIST);
+      return RandomOption(ASIN_LIST);
     }
 
-    public static String generateStringFromRegex(String regex) {
+    public static String StringFromRegex(String regex) {
 
       StringBuilder generatedString = new StringBuilder();
       Random random = new Random();
@@ -567,7 +567,7 @@ public class CustomDataFaker {
       return generatedString.toString();
     }
 
-    public static double generateRandomDouble(double minValue, double maxValue) {
+    public static double RandomDouble(double minValue, double maxValue) {
 
       if (minValue >= maxValue) {
         throw new IllegalArgumentException("minValue must be less than maxValue");
@@ -578,7 +578,7 @@ public class CustomDataFaker {
     }
 
 
-    public static long generateRandomLong(long minValue, long maxValue) {
+    public static long RandomLong(long minValue, long maxValue) {
 
       if (minValue >= maxValue) {
         throw new IllegalArgumentException("minValue must be less than maxValue");
@@ -588,164 +588,163 @@ public class CustomDataFaker {
       return minValue + (long) (random.nextDouble() * (maxValue - minValue));
     }
 
-    public static String getAddress() {
+    public static String Address() {
 
-      return getRandomOption(ADDRESS_OPTIONS);
+      return RandomOption(ADDRESS_OPTIONS);
     }
 
-    public static String getAnimal() {
+    public static String Animal() {
 
-      return getRandomOption(ANIMAL_OPTIONS);
+      return RandomOption(ANIMAL_OPTIONS);
     }
 
-    public static String getHollywoodActorActress() {
+    public static String HollywoodActorActress() {
 
-      return getRandomOption(HOLLYWOOD_ACTOR_ACTRESS_OPTIONS);
+      return RandomOption(HOLLYWOOD_ACTOR_ACTRESS_OPTIONS);
     }
 
-    public static String getBarcode() {
+    public static String Barcode() {
 
-      return getRandomOption(BARCODE_OPTIONS);
+      return RandomOption(BARCODE_OPTIONS);
     }
 
-    public static String getBeer() {
+    public static String Beer() {
 
-      return getRandomOption(BEER_OPTIONS);
+      return RandomOption(BEER_OPTIONS);
     }
 
-    public static String getBook() {
+    public static String Book() {
 
-      return getRandomOption(BOOK_OPTIONS);
+      return RandomOption(BOOK_OPTIONS);
     }
 
-    public static String getCatBreed() {
+    public static String CatBreed() {
 
-      return getRandomOption(CAT_BREED_OPTIONS);
+      return RandomOption(CAT_BREED_OPTIONS);
     }
 
-    public static String getDogBreed() {
+    public static String DogBreed() {
 
-      return getRandomOption(DOG_BREED_OPTIONS);
+      return RandomOption(DOG_BREED_OPTIONS);
     }
 
-    public static String getCurrency() {
+    public static String Currency() {
 
-      return getRandomOption(CURRENCY_OPTIONS);
+      return RandomOption(CURRENCY_OPTIONS);
     }
 
-    public static String getDate() {
+    public static String Date() {
 
       return "2023-08-28"; // Return a fixed date for simplicity
     }
 
-    public static String getTime() {
+    public static String Time() {
 
       return "15:30:00"; // Return a fixed time for simplicity
     }
 
-    public static String getDisease() {
+    public static String Disease() {
 
-      return getRandomOption(DISEASE_OPTIONS);
+      return RandomOption(DISEASE_OPTIONS);
     }
 
-    public static String getSport() {
+    public static String Sport() {
 
-      return getRandomOption(SPORT_OPTIONS);
+      return RandomOption(SPORT_OPTIONS);
     }
 
-    public static String getGender() {
+    public static String Gender() {
 
-      return getRandomOption(GENDER_OPTIONS);
+      return RandomOption(GENDER_OPTIONS);
     }
 
-    public static String getHobby() {
+    public static String Hobby() {
 
-      return getRandomOption(HOBBY_OPTIONS);
+      return RandomOption(HOBBY_OPTIONS);
     }
 
-    public static String getMusic() {
+    public static String Music() {
 
-      return getRandomOption(MUSIC_OPTIONS);
+      return RandomOption(MUSIC_OPTIONS);
     }
 
-    public static String getFullName() {
+    public static String FullName() {
 
-      return getRandomOption(FIRST_NAME_OPTIONS).concat(" ")
-                                                .concat(getLastName());
+      return RandomOption(FIRST_NAME_OPTIONS).concat(" ")
+                                             .concat(LastName());
     }
 
-    public static String getFirstName() {
+    public static String FirstName() {
 
-      return getRandomOption(FIRST_NAME_OPTIONS);
+      return RandomOption(FIRST_NAME_OPTIONS);
     }
 
-    public static String getLastName() {
+    public static String LastName() {
 
-      return getRandomOption(LAST_NAME_OPTIONS);
+      return RandomOption(LAST_NAME_OPTIONS);
     }
 
-    public static String getNation() {
+    public static String Nation() {
 
-      return getRandomOption(NATION_OPTIONS);
+      return RandomOption(NATION_OPTIONS);
     }
 
-    public static String getNumber() {
+    public static String Number() {
 
-      return getRandomOption(NUMBER_OPTIONS);
+      return RandomOption(NUMBER_OPTIONS);
     }
 
-    public static String getPhoneNumber() {
+    public static String PhoneNumber() {
 
-      return getRandomOption(PHONE_NUMBER_OPTIONS);
+      return RandomOption(PHONE_NUMBER_OPTIONS);
     }
 
-    public static String getProgrammingLanguage() {
+    public static String ProgrammingLanguage() {
 
-      return getRandomOption(PROGRAMMING_LANGUAGE_OPTIONS);
+      return RandomOption(PROGRAMMING_LANGUAGE_OPTIONS);
     }
 
-    public static String getSinNumber() {
+    public static String SinNumber() {
 
       return "123-456-789"; // Return a fixed SIN number for simplicity
     }
 
-    public static String getSuperhero() {
+    public static String Superhero() {
 
-      return getRandomOption(SUPERHERO_OPTIONS);
+      return RandomOption(SUPERHERO_OPTIONS);
     }
 
-    public static String getTeam() {
+    public static String Team() {
 
-      return getRandomOption(TEAM_OPTIONS);
+      return RandomOption(TEAM_OPTIONS);
     }
 
-    public static String getWeather() {
+    public static String Weather() {
 
-      return getRandomOption(WEATHER_OPTIONS);
+      return RandomOption(WEATHER_OPTIONS);
     }
 
-    public static String getUniversity() {
+    public static String University() {
 
-      return getRandomOption(UNIVERSITY_OPTIONS);
+      return RandomOption(UNIVERSITY_OPTIONS);
     }
 
-    public static String getBusiness() {
+    public static String Business() {
 
-      return getRandomOption(BUSINESS_OPTIONS);
+      return RandomOption(BUSINESS_OPTIONS);
     }
 
-    public static String getPostalCode() {
+    public static String PostalCode() {
 
-      return getRandomOption(POSTAL_CODE_OPTIONS);
+      return RandomOption(POSTAL_CODE_OPTIONS);
     }
 
+    public static String Job() {
 
-    public static String getJob() {
-
-      return getRandomOption(JOB_OPTIONS);
+      return RandomOption(JOB_OPTIONS);
     }
 
-    private static String getRandomOption(String[] options) {
+    private static String RandomOption(String[] options) {
 
       int index = random.nextInt(options.length);
       return options[index];
@@ -760,12 +759,14 @@ public class CustomDataFaker {
               My fullName is: %s
               I like the: %s movies and
               I usually code in %s,
+              I like the color %s,
               """.formatted(
-              DataFaker.getFirstName(),
-              DataFaker.getLastName(),
-              DataFaker.getFullName(),
-              DataFaker.getHollywoodActorActress(),
-              DataFaker.getProgrammingLanguage()
+              Provides.FirstName(),
+              Provides.LastName(),
+              Provides.FullName(),
+              Provides.HollywoodActorActress(),
+              Provides.ProgrammingLanguage(),
+              Provides.color()
          )
     );
   }
