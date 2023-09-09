@@ -577,6 +577,11 @@ public class CustomDataFaker {
       return minValue + (random.nextDouble() * (maxValue - minValue));
     }
 
+    public static double RandomDouble() {
+
+      Random random = new Random();
+      return random.nextDouble();
+    }
 
     public static long RandomLong(long minValue, long maxValue) {
 
@@ -586,6 +591,28 @@ public class CustomDataFaker {
 
       Random random = new Random();
       return minValue + (long) (random.nextDouble() * (maxValue - minValue));
+    }
+
+    public static long RandomLong() {
+
+      Random random = new Random();
+      return random.nextLong();
+    }
+
+    public static long RandomInteger(int minValue, int maxValue) {
+
+      if (minValue >= maxValue) {
+        throw new IllegalArgumentException("minValue must be less than maxValue");
+      }
+
+      Random random = new Random();
+      return minValue + (int) (random.nextDouble() * (maxValue - minValue));
+    }
+
+    public static long RandomInteger() {
+
+      Random random = new Random();
+      return random.nextInt();
     }
 
     public static String Address() {
