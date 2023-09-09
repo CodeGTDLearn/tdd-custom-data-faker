@@ -2,17 +2,19 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.lang.System.*;
+
 public class CustomDataFaker {
 
   public static void main(String[] args) {
 
-    System.out.printf(
+    out.printf(
          """
-         This is my %s %s
-           My fullName is: %s
-             I like the: %s movies and
-               I usually code in %s,
-         """.formatted(
+              This is my %s %s
+              My fullName is: %s
+              I like the: %s movies and
+              I usually code in %s,
+              """.formatted(
               DataFaker.getFirstName(),
               DataFaker.getLastName(),
               DataFaker.getFullName(),
@@ -542,7 +544,7 @@ public class CustomDataFaker {
       long maxValue = 999999L;
 
       long randomValue = generateRandomLong(minValue, maxValue);
-      System.out.println("Random Long Value: " + randomValue);
+      out.println("Random Long Value: " + randomValue);
     }
 
 

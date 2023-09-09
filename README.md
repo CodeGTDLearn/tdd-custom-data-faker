@@ -1,43 +1,40 @@
-# CustomDataFaker
+## CustomDataFaker
+* CustomDataFaker is a versatile Java class designed to generate synthetic data for various use cases, including 
+  testing, sample data generation, and prototyping. 
+* This utility provides a wide range of data categories, from names and addresses to programming languages and more, making it a valuable tool for data-driven development.
 
-CustomDataFaker is a versatile Java class designed to generate synthetic data for various use cases, including testing,
-sample data generation, and prototyping. This utility provides a wide range of data categories, from names and addresses
-to programming languages and more, making it a valuable tool for data-driven development.
-
-## Table of Contents
+### Table of Contents
 
 - [Features](#features)
 - [Usage](#usage)
 - [Data Categories](#data-categories)
 - [Example Usage](#example-usage)
+- [Output Example](#output-example)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+### Features
 
-- **Data Diversity**: CustomDataFaker offers an extensive collection of data categories to suit your needs. Whether you
-  require random names, addresses, or even superhero names, it has you covered.
+- **Data Diversity**: 
+  - Offers an extensive collection of data categories to suit your needs. Whether you require random names, addresses, or even superhero names, it has you covered.
 
-- **Easy Integration**: Integrating CustomDataFaker into your Java project is straightforward. Simply import
-  the `CustomDataFaker` class and start generating data with minimal setup.
+- **Easy Integration**: 
+  - Integrating CustomDataFaker into your Java project is straightforward. 
+  - Simply import the `CustomDataFaker` class and start generating data with minimal setup.
 
-- **Customization**: Feel free to extend or modify the data categories within the class to align with your specific
-  requirements.
+- **Customization**:
+  - Feel free to extend or modify the data categories within the class to align with your specific
+    requirements.
 
-## Usage
+### Usage
 
 To use CustomDataFaker in your Java project, follow these steps:
-
 1. Clone or download the CustomDataFaker repository.
-
 2. Import the `CustomDataFaker` class into your Java project.
-
 3. Use the provided methods to generate random data as needed in your application.
 
-## Data Categories
-
+### Data Categories
 CustomDataFaker can generate data in the following categories:
-
 - **Addresses**: Generate random street addresses.
 - **Animals**: Get names of various animals.
 - **Hollywood Actors/Actresses**: Retrieve the names of famous actors and actresses.
@@ -66,10 +63,9 @@ CustomDataFaker can generate data in the following categories:
 
 You can easily extend this class to include additional data categories or modify existing ones according to your needs.
 
-## Example Usage
+### Example Usage
 
 Here's a simple example of how to use `CustomDataFaker`:
-
 ```java
 public class ExampleUsage {
 
@@ -94,4 +90,7 @@ public class ExampleUsage {
 
     // Add more data generation as needed...
   }
-}
+} 
+```
+### Output Example
+![img.png](img.png)
