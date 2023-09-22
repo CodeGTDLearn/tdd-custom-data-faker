@@ -14,8 +14,18 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2V8LFmQFWPdDQw4PVFP8FNnfOSV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -50,9 +60,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="CustomDataFaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CustomDataFaker" />
+  <component name="RunManager" selected="Application.AppDriver">
+    <configuration name="AppDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AppDriver" />
+      <module name="custom-data-faker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataFaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataFaker" />
       <module name="custom-data-faker" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -73,7 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CustomDataFaker" />
+        <item itemvalue="Application.AppDriver" />
       </list>
     </recent_temporary>
   </component>
