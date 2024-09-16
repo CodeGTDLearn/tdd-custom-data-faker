@@ -4,8 +4,6 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.text.NumberFormat.Field.CURRENCY;
-
 public class DataFaker {
 
   private static final Random random = new Random();
@@ -1565,7 +1563,7 @@ public class DataFaker {
        "Vindaloo Curry"
   };
 
-  public static final String[] CURRENCIES = {
+  private static final String[] CURRENCIES = {
        "USD",
        "EUR",
        "GBP",
@@ -2304,7 +2302,6 @@ public class DataFaker {
   };
 
 
-
   public static String address() {
 
     return randomOption(ADDRESS);
@@ -2537,6 +2534,11 @@ public class DataFaker {
   public static String dogName() {
 
     return randomOption(DOG_NAMES);
+  }
+
+  public static String imageDog() {
+
+    return randomOption(DOG_IMAGE_URLS);
   }
 
   public static String drink() {
@@ -2816,39 +2818,6 @@ public class DataFaker {
     return randomOption(PROMOTION_CODE_NOUNS);
   }
 
-  public static LocalDate[] randomDate() {
-
-    LocalDate[] dates = new LocalDate[15];
-    int minYear = 1970;
-    int maxYear = LocalDate.now()
-                           .getYear();
-
-    for (int i = 0; i < dates.length; i++) {
-      int year = random.nextInt(maxYear - minYear + 1) + minYear;
-      int dayOfYear = random.nextInt(
-           LocalDate.ofYearDay(year, 1)
-                    .lengthOfYear()) + 1;
-
-      dates[i] = LocalDate.ofYearDay(year, dayOfYear);
-    }
-    return dates;
-  }
-
-  public static LocalTime[] randomTimes() {
-
-    LocalTime[] times = new LocalTime[15];
-
-    for (int i = 0; i < times.length; i++) {
-      int hour = random.nextInt(24);
-      int min = random.nextInt(60);
-      int sec = random.nextInt(60);
-
-      times[i] = LocalTime.of(hour, min, sec);
-    }
-
-    return times;
-  }
-
   public static String recipe() {
 
     return randomOption(RECIPES);
@@ -2982,11 +2951,6 @@ public class DataFaker {
     return randomOption(SUPER_HERO);
   }
 
-  public static String superhero() {
-
-    return randomOption(SUPER_HERO);
-  }
-
   public static String sushiIngredient() {
 
     return randomOption(SUSHI_INGREDIENTS);
@@ -3067,16 +3031,483 @@ public class DataFaker {
     return randomOption(WORDS);
   }
 
-  private static String[] randomOptions(String[] options) {
+  // ------------------------------------------------------------------- //
+  //                            Image AREA
+  // ------------------------------------------------------------------- //
+  private static final String[] DOG_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b",
+       "https://images.unsplash.com/photo-1608848461952-0f624a650b8b",
+       "https://images.unsplash.com/photo-1615751075525-55abb6a7b5c5",
+       "https://images.unsplash.com/photo-1623387648306-f1d15e9f5b79",
+       "https://images.unsplash.com/photo-1626154863299-f08532f1f390",
+       "https://images.unsplash.com/photo-1633114128353-8f13e2b500b8"
+  };
 
-    final int totalItemsToBeReturned = 3;
-    String[] finalList = new String[totalItemsToBeReturned];
+  private static final String[] CAT_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
 
-    for (int i = 0; i < totalItemsToBeReturned; i++) {
-      finalList[i] = options[i];
+  private static final String[] BIRD_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] ZOO_ANIMAL_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] AIRPLANE_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] BAKERY_ITEM_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] BREAKFAST_ITEM_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] CAR_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] MOTORCYCLE_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] FLAG_COUNTRY_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] FAST_FOOD_ITEM_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] PLANT_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] FISH_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] SPORT_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] KITCHEN_APPLIANCE_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] ITALIAN_PASTA_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] PROFESSION_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] SALAD_INGREDIENT_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] SMOOTHY_INGREDIENT_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] SUPER_HERO_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] VEGETABLE_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] SEAFOOD_TYPE_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] PIZZA_TOPPING_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  private static final String[] PLANET_IMAGE_URLS = {
+       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+       "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2",
+       "https://images.unsplash.com/photo-1552053831-71594a27632d",
+       "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
+       "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+       "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+       "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+       "https://images.unsplash.com/photo-1568572933382-74d440642117",
+       "https://images.unsplash.com/photo-1583511655813-c66c0a234a1e",
+       "https://images.unsplash.com/photo-1592194946308-fb1a62b0f48b"
+  };
+
+  public static String catImage() {
+
+    return randomOption(CAT_IMAGE_URLS);
+  }
+
+  public static String birdImage() {
+
+    return randomOption(BIRD_IMAGE_URLS);
+  }
+
+  public static String zooAnimalImage() {
+
+    return randomOption(ZOO_ANIMAL_IMAGE_URLS);
+  }
+
+  public static String airplaneImage() {
+
+    return randomOption(AIRPLANE_IMAGE_URLS);
+  }
+
+  public static String bakeryItemImage() {
+
+    return randomOption(BAKERY_ITEM_IMAGE_URLS);
+  }
+
+  public static String breakfastItemImage() {
+
+    return randomOption(BREAKFAST_ITEM_IMAGE_URLS);
+  }
+
+  public static String carImage() {
+
+    return randomOption(CAR_IMAGE_URLS);
+  }
+
+  public static String motorcycleImage() {
+
+    return randomOption(MOTORCYCLE_IMAGE_URLS);
+  }
+
+  public static String flagCountryImage() {
+
+    return randomOption(FLAG_COUNTRY_IMAGE_URLS);
+  }
+
+  public static String fastFoodItemImage() {
+
+    return randomOption(FAST_FOOD_ITEM_IMAGE_URLS);
+  }
+
+  public static String plantImage() {
+
+    return randomOption(PLANT_IMAGE_URLS);
+  }
+
+  public static String fishImage() {
+
+    return randomOption(FISH_IMAGE_URLS);
+  }
+
+  public static String sportImage() {
+
+    return randomOption(SPORT_IMAGE_URLS);
+  }
+
+  public static String kitchenApplianceImage() {
+
+    return randomOption(KITCHEN_APPLIANCE_IMAGE_URLS);
+  }
+
+  public static String italianPastaImage() {
+
+    return randomOption(ITALIAN_PASTA_IMAGE_URLS);
+  }
+
+  public static String professionImage() {
+
+    return randomOption(PROFESSION_IMAGE_URLS);
+  }
+
+  public static String saladIngredientImage() {
+
+    return randomOption(SALAD_INGREDIENT_IMAGE_URLS);
+  }
+
+  public static String smoothyIngredientImage() {
+
+    return randomOption(SMOOTHY_INGREDIENT_IMAGE_URLS);
+  }
+
+  public static String superHeroImage() {
+
+    return randomOption(SUPER_HERO_IMAGE_URLS);
+  }
+
+  public static String vegetableImage() {
+
+    return randomOption(VEGETABLE_IMAGE_URLS);
+  }
+
+  public static String seafoodTypeImage() {
+
+    return randomOption(SEAFOOD_TYPE_IMAGE_URLS);
+  }
+
+  public static String pizzaToppingImage() {
+
+    return randomOption(PIZZA_TOPPING_IMAGE_URLS);
+  }
+
+  public static String planetImage() {
+
+    return randomOption(PLANET_IMAGE_URLS);
+  }
+
+  public static LocalDate[] randomDate() {
+
+    LocalDate[] dates = new LocalDate[15];
+    int minYear = 1970;
+    int maxYear = LocalDate.now()
+                           .getYear();
+
+    for (int i = 0; i < dates.length; i++) {
+      int year = random.nextInt(maxYear - minYear + 1) + minYear;
+      int dayOfYear = random.nextInt(
+           LocalDate.ofYearDay(year, 1)
+                    .lengthOfYear()) + 1;
+
+      dates[i] = LocalDate.ofYearDay(year, dayOfYear);
+    }
+    return dates;
+  }
+
+  public static LocalTime[] randomTimes() {
+
+    LocalTime[] times = new LocalTime[15];
+
+    for (int i = 0; i < times.length; i++) {
+      int hour = random.nextInt(24);
+      int min = random.nextInt(60);
+      int sec = random.nextInt(60);
+
+      times[i] = LocalTime.of(hour, min, sec);
     }
 
-    return finalList;
+    return times;
+  }
+
+  private static String[] randomOptions(int total, String... options) {
+
+    if (total > options.length) total = options.length;
+
+    String[] totalList = new String[total];
+
+    for (int i = 0; i < total; i++) totalList[i] = options[i];
+
+    return totalList;
   }
 
   private static String randomOption(String[] options) {

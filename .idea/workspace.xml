@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bd64fb4-3c67-48cf-b3cb-5f2ebe5cc24b" name="Changes" comment="" />
+    <list default="true" id="2bd64fb4-3c67-48cf-b3cb-5f2ebe5cc24b" name="Changes" comment="5.0) Improving Project&#10;&#10;* CONCLUDED:&#10;- Image Support&#10;&#10;* WORKING:&#10;&#10;* NEXT STEPS:&#10;&#10;* FUTURE IMPLEMENTATIONS:" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +27,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;9380b2a2&quot;
+}</component>
   <component name="ProjectId" id="2V8LFmQFWPdDQw4PVFP8FNnfOSV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,12 +46,15 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SERVIDOR/Projects/tdd-custom-data-faker/src/main/java/CustomDataFaker.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.13510747&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.3564239&quot;,
     &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/SERVIDOR/Projects/tdd-custom-data-faker/src/main/java/CustomDataFaker.java&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -103,6 +109,63 @@
       <option name="presentableId" value="Default" />
       <updated>1691522674191</updated>
     </task>
+    <task id="LOCAL-00001" summary="            3.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726181877198</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726181877198</updated>
+    </task>
+    <task id="LOCAL-00002" summary="            3.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726181962386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726181962386</updated>
+    </task>
+    <task id="LOCAL-00003" summary="            3.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726182040321</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726182040321</updated>
+    </task>
+    <task id="LOCAL-00004" summary="            4.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726249666023</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726249666023</updated>
+    </task>
+    <task id="LOCAL-00005" summary="            4.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726259332970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726259332970</updated>
+    </task>
+    <task id="LOCAL-00006" summary="5.0) Improving Project&#10;&#10;* CONCLUDED:&#10;- Image Support&#10;&#10;* WORKING:&#10;&#10;* NEXT STEPS:&#10;&#10;* FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726526579363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726526579363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="5.0) Improving Project&#10;&#10;* CONCLUDED:&#10;- Image Support&#10;&#10;* WORKING:&#10;&#10;* NEXT STEPS:&#10;&#10;* FUTURE IMPLEMENTATIONS:">
+      <option name="closed" value="true" />
+      <created>1726527406254</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726527406254</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,5 +178,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="            3.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:" />
+    <MESSAGE value="            4.0) Improving Project&#10;&#10;            * CONCLUDED:&#10;            - Refactorings&#10;&#10;            * WORKING:&#10;&#10;            * NEXT STEPS:&#10;&#10;            * FUTURE IMPLEMENTATIONS:" />
+    <MESSAGE value="5.0) Improving Project&#10;&#10;* CONCLUDED:&#10;- Image Support&#10;&#10;* WORKING:&#10;&#10;* NEXT STEPS:&#10;&#10;* FUTURE IMPLEMENTATIONS:" />
+    <option name="LAST_COMMIT_MESSAGE" value="5.0) Improving Project&#10;&#10;* CONCLUDED:&#10;- Image Support&#10;&#10;* WORKING:&#10;&#10;* NEXT STEPS:&#10;&#10;* FUTURE IMPLEMENTATIONS:" />
   </component>
 </project>
